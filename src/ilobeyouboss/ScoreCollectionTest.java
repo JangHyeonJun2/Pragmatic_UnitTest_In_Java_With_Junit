@@ -10,6 +10,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class ScoreCollectionTest {
     @Test
     void test() {
-        fail("Not yet implemented");
+
+    }
+
+    @Test
+    void answerArithmeticMeanOfTwoNumbers() {
+        //given
+        ScoreCollection collection = new ScoreCollection();
+        collection.add(() -> 5);
+        collection.add(() -> 7);
+
+        //when
+        int actualResult = collection.arithmeticMean();
+
+        //then
+        assertEquals(actualResult, 6);
+
+
     }
 }

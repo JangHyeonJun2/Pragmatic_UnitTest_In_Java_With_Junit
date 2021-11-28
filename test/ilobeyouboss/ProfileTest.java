@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProfileTest {
     @Test
-    public void test() {
+    public void matchAnswersFalseWhenMustMatchCriteriaNotMet() {
         Profile profile = new Profile("Bull Hockey, Inc.");
         Question question = new BooleanQuestion(1, "Got bonuses?");
         Answer profileAnswer = new Answer(question, Bool.FALSE);
@@ -16,6 +16,9 @@ class ProfileTest {
         Criterion criterion = new Criterion(criteriaAnswer, Weight.MustMatch);
 
         criteria.add(criterion);
+
+        boolean matches = profile.matches(criteria);
+        assertFalse(matches);
     }
 
 }

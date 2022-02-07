@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+//Criteria : 기준, Criterion : 표준
 class ProfileTest {
     private Profile profile;
     private Criteria criteria;

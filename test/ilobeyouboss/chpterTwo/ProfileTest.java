@@ -1,5 +1,6 @@
-package ilobeyouboss;
+package ilobeyouboss.chpterTwo;
 
+import ilobeyouboss.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

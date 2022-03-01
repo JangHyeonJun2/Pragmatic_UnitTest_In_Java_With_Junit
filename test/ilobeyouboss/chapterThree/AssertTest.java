@@ -1,11 +1,12 @@
 package ilobeyouboss.chapterThree;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AssertTest {
     class InsufficientFundsException extends RuntimeException {
@@ -89,5 +90,13 @@ public class AssertTest {
     public void testWithWorthlessAssertionComment() {
         account.deposit(50);
         assertThat("account balance is 100", account.getBalance(), equalTo(50));
+    }
+
+    @Test
+    public void throwsWhenWithdrawingTooMuch() {
+        assertThrows(InsufficientFundsException.class, () -> account.withdraw(100)); // 방법1
+        Assertions.assertThatThrownBy(() -> account.withdraw(100)).isInstanceOf(InsufficientFundsException.class); //방법 2 → Assertions.core 필요.
+        InsufficientFundsException insufficientFundsException = assertThrows(InsufficientFundsException.class, () -> account.withdraw(100));
+        assertEquals(insufficientFundsException.getMessage(), "balance only 0");
     }
 }

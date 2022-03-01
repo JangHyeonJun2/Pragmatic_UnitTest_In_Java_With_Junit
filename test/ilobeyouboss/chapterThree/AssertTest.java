@@ -84,4 +84,10 @@ public class AssertTest {
         assertThat(account.getName(), is(not(nullValue())));
         assertThat(account.getName(), is(notNullValue()));
     }
+
+    @Test // 아래의 설명문은 테스트를 정확하게 설명 x, 주석의 기대 잔고는 100이지만 실제 코드의 기댓값은 50이다. 그래서 주석을 믿지마라(?)
+    public void testWithWorthlessAssertionComment() {
+        account.deposit(50);
+        assertThat("account balance is 100", account.getBalance(), equalTo(50));
+    }
 }

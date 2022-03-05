@@ -94,7 +94,7 @@ public class AssertTest {
 
     @Test
     public void throwsWhenWithdrawingTooMuch() {
-        assertThrows(InsufficientFundsException.class, () -> account.withdraw(100)); // 방법1
+        assertThrows(InsufficientFundsException.class, () -> account.withdraw(90)); // 방법1
         Assertions.assertThatThrownBy(() -> account.withdraw(100)).isInstanceOf(InsufficientFundsException.class); //방법 2 → Assertions.core 필요.
         InsufficientFundsException insufficientFundsException = assertThrows(InsufficientFundsException.class, () -> account.withdraw(100));
         assertEquals(insufficientFundsException.getMessage(), "balance only 0");

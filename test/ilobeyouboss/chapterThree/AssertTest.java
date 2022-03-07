@@ -70,7 +70,7 @@ public class AssertTest {
     }
 
     @Test
-    public void 어설트댓_테스트하기() {
+    public void assertThat_테스트하기() {
         account.deposit(100);
         assertThat(account.getBalance(), equalTo(100));
         assertThat(account.getBalance() > 0, is(true));

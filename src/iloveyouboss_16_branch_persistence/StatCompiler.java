@@ -58,6 +58,7 @@ public class StatCompiler {
         return histogram;
     }
 
+    //주석
     public Map<Integer, String> questionText(List<BooleanAnswer> answers) {
         HashMap<Integer, String> questions = new HashMap<>();
         answers.stream().forEach(answer -> {

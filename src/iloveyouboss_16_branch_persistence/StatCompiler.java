@@ -58,7 +58,7 @@ public class StatCompiler {
         return histogram;
     }
 
-    //주석
+    //TODO return 값 추가해야함.
     public Map<Integer, String> questionText(List<BooleanAnswer> answers) {
         HashMap<Integer, String> questions = new HashMap<>();
         answers.stream().forEach(answer -> {

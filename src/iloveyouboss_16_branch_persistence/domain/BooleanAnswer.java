@@ -1,4 +1,4 @@
-package iloveyouboss_16_branch_persistence;
+package iloveyouboss_16_branch_persistence.domain;
 
 public class BooleanAnswer {
     private int questionId;

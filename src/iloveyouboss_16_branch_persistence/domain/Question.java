@@ -1,4 +1,4 @@
-package iloveyouboss_16_branch_persistence;
+package iloveyouboss_16_branch_persistence.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;

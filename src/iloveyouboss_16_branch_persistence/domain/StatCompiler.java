@@ -1,4 +1,4 @@
-package iloveyouboss_16_branch_persistence;
+package iloveyouboss_16_branch_persistence.domain;
 
 import java.util.HashMap;
 import java.util.List;
@@ -58,12 +58,12 @@ public class StatCompiler {
         return histogram;
     }
 
-    //TODO return 값 추가해야함.
     public Map<Integer, String> questionText(List<BooleanAnswer> answers) {
         HashMap<Integer, String> questions = new HashMap<>();
         answers.stream().forEach(answer -> {
             if (!questions.containsKey(answer.getQuestionId()))
                 questions.put(answer.getQuestionId(), controller.find(answer.getQuestionId()).getText());
         });
+        return questions;
     }
 }
